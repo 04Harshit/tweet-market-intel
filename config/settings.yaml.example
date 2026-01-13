@@ -1,0 +1,74 @@
+# Twitter Market Intelligence System Configuration
+# Copy this file to settings.yaml and modify as needed
+
+scraping:
+  hashtags: ["#nifty50", "#sensex", "#intraday", "#banknifty"]
+  search_terms: ["Nifty 50", "Sensex", "BSE", "NSE"]
+  time_window_hours: 24
+  min_tweets_target: 2000
+  max_tweets_per_hashtag: 1000
+  language_filter: ["en", "hi"]  # English + Hindi
+
+rate_limiting:
+  max_requests_per_minute: 30
+  max_requests_per_hour: 300
+  retry_attempts: 3
+  backoff_factor: 2
+  jitter_min: 0.5
+  jitter_max: 1.5
+
+processing:
+  batch_size: 100
+  max_workers: 4
+  
+  text_cleaning:
+    remove_urls: true
+    remove_mentions: false
+    remove_hashtags: false
+    remove_emojis: false
+    convert_to_lowercase: true
+    keep_indian_chars: true
+    
+  language_handling:
+    detect_language: true
+    transliterate_to_english: false
+    remove_non_printable: true
+    fix_encoding: true
+
+storage:
+  raw_format: "parquet"
+  processed_format: "parquet"
+  compression: "snappy"
+  
+  partitioning:
+    enabled: true
+    columns: ["date", "hour"]
+  
+  paths:
+    raw: "data/raw"
+    processed: "data/processed"
+    signals: "data/signals"
+    models: "data/models"
+
+analysis:
+  feature_extraction:
+    method: "tfidf"
+    tfidf_max_features: 1000
+    tfidf_ngram_range: [1, 2]
+    
+  signal_generation:
+    window_size: 60
+    aggregation_method: "weighted_average"
+    confidence_interval: 0.95
+
+visualization:
+  max_data_points: 1000
+  sampling_method: "systematic"
+
+monitoring:
+  logging_level: "INFO"
+  
+security:
+  use_proxy: false
+  proxy_list: []
+  user_agents_rotation: true

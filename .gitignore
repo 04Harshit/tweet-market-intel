@@ -1,0 +1,240 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+.env
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Data files
+data/raw/
+data/processed/
+data/signals/
+data/models/
+data/visualizations/
+data/analysis/
+*.parquet
+*.parquet.*
+!data/README.md
+!data/sample_tweets.parquet
+!data/sample_cleaned.parquet
+!data/sample_signals.parquet
+!data/sample_results.json
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Config files (except examples)
+config/settings.yaml
+config/logging_config.yaml
+!config/settings.yaml.example
+!config/logging_config.yaml.example
+
+# Secrets
+*.pem
+*.key
+*.crt
+secrets/
+secrets.yaml
+.env
+.env.local
+.env.*.local
+
+# PyTest
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Profiling
+prof/
+profile/
+*.prof
+*.stats
+
+# Output files
+output/
+exports/
+reports/
+*.html
+*.pdf
+*.png
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+*.temp
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Compression
+*.gz
+*.bz2
+*.zip
+*.tar
+*.tgz
+
+# PyCharm
+.idea/
+*.iml
+out/
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# macOS
+._*.py
+
+# Windows
+*.exe
+*.msi
+*.bat
+
+# Selenium/webdriver
+chromedriver
+geckodriver
+*.crx
+*.xpi
+
+# Specific to this project
+# Models (except sample)
+models/
+!data/models/sample_model.joblib
+
+# Visualizations (except sample)
+!data/visualizations/sample_dashboard.html
+
+# Cache
+.cache/
+.cache/**
+__pycache__/
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+*.pyd
+
+# Distribution / packaging
+.Python
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/

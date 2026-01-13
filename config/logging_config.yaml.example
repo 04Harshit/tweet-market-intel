@@ -1,0 +1,53 @@
+version: 1
+disable_existing_loggers: false
+
+formatters:
+  standard:
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    datefmt: "%Y-%m-%d %H:%M:%S"
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: INFO
+    formatter: standard
+    stream: ext://sys.stdout
+
+  file_handler:
+    class: logging.handlers.RotatingFileHandler
+    level: DEBUG
+    formatter: standard
+    filename: logs/market_intel.log
+    maxBytes: 10485760
+    backupCount: 5
+    encoding: utf8
+
+loggers:
+  collector:
+    level: INFO
+    handlers: [console, file_handler]
+    propagate: false
+
+  processor:
+    level: INFO
+    handlers: [console, file_handler]
+    propagate: false
+
+  analyzer:
+    level: INFO
+    handlers: [console, file_handler]
+    propagate: false
+
+  storage:
+    level: INFO
+    handlers: [console, file_handler]
+    propagate: false
+
+  visualization:
+    level: INFO
+    handlers: [console, file_handler]
+    propagate: false
+
+root:
+  level: INFO
+  handlers: [console, file_handler]
