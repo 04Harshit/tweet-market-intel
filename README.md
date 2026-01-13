@@ -23,29 +23,41 @@ A Python-based system for collecting, processing, and analyzing Twitter/X data f
 ```bash
 git clone <repository-url>
 cd twitter-market-intel
-Create and activate virtual environment:
-bash
+```
+
+2. Create and activate virtual environment:
+```bash
 python -m venv venv
 # On Windows:
 venv\Scripts\activate
 # On macOS/Linux:
 source venv/bin/activate
-Install dependencies:
-bash
-pip install -r requirements.txt
-Install snscrape (for Twitter scraping without API):
-bash
-pip install git+https://github.com/JustAnotherArchivist/snscrape.git
-Usage
+```
 
-Configure settings (optional):
-bash
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+4. Install snscrape (for Twitter scraping without API):
+```bash
+pip install git+https://github.com/JustAnotherArchivist/snscrape.git
+```
+
+### Usage
+
+1. Configure settings (optional):
+```bash
 cp config/settings.yaml.example config/settings.yaml
-Run the complete pipeline:
-bash
+```
+
+2. Run the complete pipeline:
+```bash
 python scripts/run_pipeline.py
-Or run individual components:
-bash
+```
+
+3. Or run individual components:
+```bash
 # Collect tweets
 python src/collector/twitter_scraper.py --hashtags "#nifty50,#sensex" --hours 24 --limit 2000
 
@@ -57,9 +69,10 @@ python src/analyzer/signal_generator.py --input data/processed/ --output data/si
 
 # Visualize results
 python src/visualization/stream_visualizer.py --input data/signals/
-Project Structure
+```
 
-text
+## Project Structure
+```
 github-repo/
 ├── src/                    # Source code
 ├── config/                 # Configuration files
@@ -68,23 +81,25 @@ github-repo/
 ├── scripts/                # Execution scripts
 ├── data/                   # Sample output data
 └── docs/                   # Technical documentation
-Configuration
+```
 
-Edit config/settings.yaml to customize:
+## Configuration
 
-Hashtags to monitor
-Collection time window
-Rate limiting parameters
-Storage paths
-Analysis parameters
-Sample Output
+Edit `config/settings.yaml` to customize:
+- Hashtags to monitor
+- Collection time window
+- Rate limiting parameters
+- Storage paths
+- Analysis parameters
+
+## Sample Output
 
 The system generates:
+- Raw tweet data in JSON/Parquet format
+- Cleaned and processed data
+- Quantitative trading signals
+- Visualizations showing signal trends
 
-Raw tweet data in JSON/Parquet format
-Cleaned and processed data
-Quantitative trading signals
-Visualizations showing signal trends
-License
+## License
 
 MIT
